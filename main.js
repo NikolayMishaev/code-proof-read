@@ -14,22 +14,19 @@
 ограничения:
 заглавная только первая буква
 остальные буквы в нижнем регистре
-в конце предложения точка
+каждое новое предложение начинается с большой буквы
 
 псевдокод:
     заменить в строке все вхождения "ie" на "ei"
-    сделать первую букву заглавной
-    проверить, что в конце точка, если нет, добавить ее
+    разделить предложения по точкам на элементы, сохранить в массив
+    пройтись по каждому элементу и сделать первую букву заглавной
 
 */
 
 function proofread (str) {
     str = str.toLowerCase().replaceAll('ie' ,'ei')
-    if (str.slice(-1) !== '.') str = str + '.'
-    let firstLetter = str[0].toUpperCase()
-    return firstLetter + str.slice(1)
-
+    return str.split('. ').map(el=>el[0].toUpperCase() + el.slice(1)).join('. ').trim()
 }
 
 console.log(proofread("He haD iEght ShOTs of CAffIEne."))
-console.log(proofread("He haD iEght ShOTs of CAffIEne"))
+console.log(proofread("THe neIghBour's ceiLing FEll on His Head. The WiEght of It crusHed him To thE gROuNd."))
