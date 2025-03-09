@@ -24,7 +24,10 @@
 */
 
 function proofread (str) {
-    return str.toLowerCase().replaceAll('ie' ,'ei')
+    str = str.toLowerCase().replaceAll('ie' ,'ei')
+    let firstLetter = str[0].toUpperCase()
+    return firstLetter + str.slice(1)
+
 }
 
 console.log(proofread("He haD iEght ShOTs of CAffIEne."))
