@@ -17,9 +17,14 @@
 в конце предложения точка
 
 псевдокод:
-заменить в строке все вхождения "ie" на "ei"
+    заменить в строке все вхождения "ie" на "ei"
 сделать первую букву заглавной
 проверить, что в конце точка, если нет, добавить ее
 
 */
 
+function proofread (str) {
+    return str.toLowerCase().replaceAll('ie' ,'ei')
+}
+
+console.log(proofread("He haD iEght ShOTs of CAffIEne."))
